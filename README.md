@@ -1,3 +1,7 @@
+<!-- joxia-credits -->
+> 🎮 **Fork Joxia Games** de [petarov/game-off-2012](https://github.com/petarov/game-off-2012) — jeu original de ses auteurs, licence **MIT** (fichier `LICENSE` d'origine conservé). Jouer : https://joxiagame.github.io/raging-gardens-joxia/ · Crédits : [`CREDITS.md`](CREDITS.md) · Liste source : [leereilly/games](https://github.com/leereilly/games)
+<!-- /joxia-credits -->
+
 _.o0 Raging Gardens 0o._
 ==========================
 
