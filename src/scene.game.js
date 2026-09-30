@@ -112,7 +112,7 @@ Crafty.scene("main", function() {
         
         if (msg == 'carrots') {
             //$('#msgs').css('color','#aa0000');
-            $('#msgs').text('You have no carrots to eat!');
+            $('#msgs').text('Tu n\'as aucune carotte à manger !');
         } else if (msg == 'clear') {
             $('#msgs').text('');
             return;

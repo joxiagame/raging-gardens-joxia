@@ -93,17 +93,17 @@ Crafty.bind("ShowSaveHiscore", function(score) {
         "width": 400,
         "height": 300,
         modal: false,
-        "title": "Save Hiscore",
+        "title": "Enregistrer le score",
         zIndex: 20,
         open: function() {
             if (GJAPI && GJAPI.bActive) {
-                $(this).html('Publish your score to Gamejolt?');
+                $(this).html('Publier ton score sur Gamejolt ?');
             } else {
-                $(this).html('Publish your score as \'Guest\' to Gamejolt?');
+                $(this).html('Publier ton score sur Gamejolt en tant qu\'invité ?');
             }
         },
         buttons: {
-            "Yes": function() {
+            "Oui": function() {
                 var hiscore = _Globals['hiscore'];
                 hiscore.save(score, function (success) {
                     if (success) {
@@ -119,7 +119,7 @@ Crafty.bind("ShowSaveHiscore", function(score) {
                 });
                 $(this).dialog("close");
             },
-            "No": function() {
+            "Non": function() {
                 $(this).dialog("close");
                 Crafty.trigger('ShowHiscore', {text: undefined, refresh: true});
             }            
@@ -136,18 +136,18 @@ Crafty.bind("ShowHiscore", function(params) {
         height: 520,
         modal: true,
         position: 'top',
-        "title": "Top 50 Scores",
+        "title": "Top 50 des scores",
         open: function() {
             $("#dialog-score").css({'height': '520px'});
             if (!params.text) {
-                $("#dialog-score").html('<p>Please wait while loading scores ...</p>');
+                $("#dialog-score").html('<p>Chargement des scores…</p>');
                 var hiscore = _Globals['hiscore'];
                 var text = '<div>';
                 text += '<span class="name u">';
-                text += 'Name';
+                text += 'Nom';
                 text += '</span>';
                 text += '<span class="score u">';
-                text += 'Carrots';
+                text += 'Carottes';
                 text += '</span>';
                 text += '</div>';            
                 hiscore.getAllScores(function(scores, server) {
@@ -155,7 +155,7 @@ Crafty.bind("ShowHiscore", function(params) {
                     if (!scores) {
                         text += '<div>';
                         text += '<span class="name">';
-                        text += 'Failed loading scores!';
+                        text += 'Impossible de charger les scores !';
                         text += '</span>';
                         text += '<span class="score">';
                         text += '</span>';
@@ -187,11 +187,11 @@ Crafty.bind("ShowHiscore", function(params) {
             }  
         },
         buttons: {
-            "Refresh Scores": function() {
+            "Actualiser": function() {
                 $(this).dialog("close");
                 Crafty.trigger('ShowHiscore', params);
             },
-            "Let me out!": function() {
+            "Fermer": function() {
                 if (params.refresh) {
                     Crafty.audio.stop('music');
                     Crafty.init();

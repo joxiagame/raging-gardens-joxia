@@ -124,11 +124,11 @@ require(["src/traps.js", "src/config.js", "src/actor_object.js", "src/hiscore.js
         },
         // On Progress
         function(e) {
-            $('#loading').html('Loaded: ' + e.percent.toFixed(0) + '%');
+            $('#loading').html('Chargement : ' + e.percent.toFixed(0) + ' %');
         },
         // On Error
         function(e) {
-            $('#loading').html('Could not load: ' + e.src);
+            $('#loading').html('Impossible de charger : ' + e.src);
             if (_Globals.conf.get('debug'))
                 console.error(e);       
         });
