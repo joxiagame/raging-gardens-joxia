@@ -148,6 +148,8 @@ Crafty.scene("main", function() {
             Crafty.unbind('EnterFrame');
             Crafty.stop();
             //Crafty.trigger("ShowHiscore", {text: undefined, refresh: true}); 
+            // Joxia : carottes récoltées envoyées au classement du hub
+            if (window.joxiaScore) window.joxiaScore(player.get('carrotsCount'));
             Crafty.trigger('ShowSaveHiscore', player.get('carrotsCount'));
         } else {
             // --- time left
